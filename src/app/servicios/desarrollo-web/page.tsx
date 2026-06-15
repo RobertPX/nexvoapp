@@ -4,8 +4,17 @@ import { ArrowRight, Code2, Globe, Zap, BarChart3, Shield, Layers, Smartphone, S
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Desarrollo Web a Medida',
-  description: 'Desarrollamos sitios web, aplicaciones web, plataformas SaaS y portales empresariales modernos, rápidos y escalables.',
+  title: 'Desarrollo Web en Bolivia — Sitios y Aplicaciones Web Profesionales',
+  description:
+    'Desarrollamos sitios web corporativos, aplicaciones web, plataformas SaaS y portales empresariales en Bolivia. Modernos, rápidos y escalables. Consulta gratis.',
+  keywords: ['desarrollo web Bolivia', 'sitios web profesionales Bolivia', 'aplicaciones web Bolivia', 'plataforma SaaS Bolivia', 'empresa desarrollo web La Paz'],
+  alternates: { canonical: 'https://nexvoapp.lat/servicios/desarrollo-web' },
+  openGraph: {
+    title: 'Desarrollo Web en Bolivia | NexvoApp',
+    description:
+      'Creamos sitios web corporativos, aplicaciones web y plataformas SaaS en Bolivia. Tecnologías modernas, rendimiento optimizado.',
+    url: 'https://nexvoapp.lat/servicios/desarrollo-web',
+  },
 }
 
 const offerings = [
@@ -35,9 +44,32 @@ const benefits = [
   'Escalable para crecer junto a tu negocio',
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://nexvoapp.lat' },
+        { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://nexvoapp.lat/servicios' },
+        { '@type': 'ListItem', position: 3, name: 'Desarrollo Web', item: 'https://nexvoapp.lat/servicios/desarrollo-web' },
+      ],
+    },
+    {
+      '@type': 'Service',
+      name: 'Desarrollo Web',
+      description: 'Sitios web corporativos, aplicaciones web, plataformas SaaS y portales empresariales modernos, rápidos y escalables.',
+      provider: { '@type': 'Organization', name: 'NexvoApp', url: 'https://nexvoapp.lat' },
+      areaServed: { '@type': 'Country', name: 'Bolivia' },
+      serviceType: 'Desarrollo de Software',
+    },
+  ],
+}
+
 export default function DesarrolloWebPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       {/* Hero */}
       <section className="hero-gradient pt-28 pb-16">
         <div className="container">

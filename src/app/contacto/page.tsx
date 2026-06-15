@@ -3,8 +3,17 @@ import Link from 'next/link'
 import { MessageCircle, Mail, Globe, MapPin, Clock, ArrowRight, Code2, Smartphone, Layers, ShoppingBag } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Contacto',
-  description: 'Contáctanos para hablar sobre tu proyecto. Respondemos en menos de 24 horas.',
+  title: 'Contacto — Habla con NexvoApp sobre tu Proyecto de Software',
+  description:
+    'Contáctanos para desarrollar tu aplicación web, app móvil o software a medida. Respondemos en menos de 24 horas. Primera consulta 100% gratuita.',
+  keywords: ['contacto empresa software Bolivia', 'presupuesto software Bolivia', 'contratar desarrollo web Bolivia', 'consulta gratuita software Bolivia'],
+  alternates: { canonical: 'https://nexvoapp.lat/contacto' },
+  openGraph: {
+    title: 'Contacto | NexvoApp — Desarrollo de Software en Bolivia',
+    description:
+      'Cuéntanos tu proyecto. Primera consulta gratuita. Respondemos en menos de 24 horas.',
+    url: 'https://nexvoapp.lat/contacto',
+  },
 }
 
 const contactMethods = [
@@ -57,9 +66,20 @@ const faqs = [
   { q: '¿Qué pasa después del lanzamiento?', a: 'Ofrecemos soporte post-lanzamiento y contratos de mantenimiento. Tu software seguirá actualizado, seguro y funcionando correctamente.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+}
+
 export default function ContactoPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       {/* Hero */}
       <section className="hero-gradient pt-28 pb-20">
         <div className="container text-center max-w-2xl mx-auto">

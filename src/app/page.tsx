@@ -1,4 +1,18 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
+
+export const metadata: Metadata = {
+  title: 'NexvoApp — Desarrollo de Software a Medida en Bolivia',
+  description:
+    'Desarrollamos aplicaciones web, apps móviles para iOS y Android, software empresarial a medida y tiendas eCommerce en La Paz, Bolivia. Consulta gratuita sin compromiso.',
+  alternates: { canonical: 'https://nexvoapp.lat' },
+  openGraph: {
+    title: 'NexvoApp — Desarrollo de Software a Medida en Bolivia',
+    description:
+      'Estudio de software en La Paz, Bolivia. Aplicaciones web, apps móviles, sistemas empresariales a medida y eCommerce. Consulta gratuita.',
+    url: 'https://nexvoapp.lat',
+  },
+}
 import { ArrowRight, Code2, Smartphone, Layers, ShoppingBag, CheckCircle2, Users, Briefcase, Star, Zap, Shield, Clock, Globe, BarChart3 } from 'lucide-react'
 import CTABanner from '@/components/CTABanner'
 

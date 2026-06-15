@@ -3,8 +3,17 @@ import { ArrowRight, Zap, Shield, Users, Star } from 'lucide-react'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Sobre Nosotros',
-  description: 'Somos NexvoApp, un equipo de desarrollo de software especializado en construir soluciones a medida para empresas en Bolivia y Latinoamérica.',
+  title: 'Sobre NexvoApp — Empresa de Software en La Paz, Bolivia',
+  description:
+    'NexvoApp es un estudio de desarrollo de software en La Paz, Bolivia. Construimos software a medida, aplicaciones web y apps móviles con calidad y transparencia.',
+  keywords: ['empresa software Bolivia', 'estudio desarrollo software La Paz', 'NexvoApp Bolivia', 'quienes somos NexvoApp'],
+  alternates: { canonical: 'https://nexvoapp.lat/nosotros' },
+  openGraph: {
+    title: 'Sobre NexvoApp — Empresa de Software en La Paz, Bolivia',
+    description:
+      'Estudio de desarrollo de software en La Paz, Bolivia. Aplicaciones web, apps móviles y sistemas empresariales a medida con calidad y transparencia.',
+    url: 'https://nexvoapp.lat/nosotros',
+  },
 }
 
 const values = [

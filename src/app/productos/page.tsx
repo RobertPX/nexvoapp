@@ -3,8 +3,17 @@ import { ArrowRight, BarChart3, Users, Cloud, Package, ShoppingCart, Bell, FileT
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Productos — Techventory',
-  description: 'Techventory es el sistema SaaS de gestión de inventario y ventas de NexvoApp. Multiusuario, en la nube, simple de usar.',
+  title: 'Techventory — Sistema de Inventario y Ventas para Negocios en Bolivia',
+  description:
+    'Techventory es el sistema SaaS de gestión de inventario y ventas de NexvoApp. Multiusuario, en la nube, con reportes en tiempo real. Desde Bs 150/mes.',
+  keywords: ['sistema inventario Bolivia', 'software ventas Bolivia', 'Techventory', 'gestión inventario La Paz', 'sistema SaaS Bolivia', 'software negocio Bolivia'],
+  alternates: { canonical: 'https://nexvoapp.lat/productos' },
+  openGraph: {
+    title: 'Techventory — Sistema de Inventario y Ventas en Bolivia | NexvoApp',
+    description:
+      'Sistema SaaS de gestión de inventario y ventas para negocios en Bolivia. Multiusuario, en la nube, con reportes en tiempo real.',
+    url: 'https://nexvoapp.lat/productos',
+  },
 }
 
 const features = [
@@ -48,9 +57,26 @@ const plans = [
   },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Techventory',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, iOS, Android',
+  description:
+    'Sistema SaaS de gestión de inventario y ventas multiusuario en la nube. Control de stock, registro de ventas, cotizaciones y reportes en tiempo real.',
+  url: 'https://techventory.nexvoapp.lat',
+  offers: [
+    { '@type': 'Offer', name: 'Básico', price: '150', priceCurrency: 'BOB', billingIncrement: 'P1M' },
+    { '@type': 'Offer', name: 'Profesional', price: '320', priceCurrency: 'BOB', billingIncrement: 'P1M' },
+  ],
+  provider: { '@type': 'Organization', name: 'NexvoApp', url: 'https://nexvoapp.lat' },
+}
+
 export default function ProductosPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       {/* Hero */}
       <section className="hero-gradient pt-28 pb-16">
         <div className="container">

@@ -4,8 +4,17 @@ import { Code2, Smartphone, Layers, ShoppingBag, ArrowRight, CheckCircle2, Zap, 
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Servicios de Desarrollo de Software',
-  description: 'Desarrollamos aplicaciones web, apps móviles, software a medida y eCommerce para empresas que quieren crecer.',
+  title: 'Servicios de Desarrollo de Software en Bolivia',
+  description:
+    'NexvoApp ofrece desarrollo web, aplicaciones móviles iOS y Android, software empresarial a medida y tiendas eCommerce en Bolivia. Presupuesto sin costo.',
+  keywords: ['servicios desarrollo software Bolivia', 'empresa desarrollo web Bolivia', 'desarrollo apps móviles Bolivia', 'software empresarial Bolivia'],
+  alternates: { canonical: 'https://nexvoapp.lat/servicios' },
+  openGraph: {
+    title: 'Servicios de Desarrollo de Software en Bolivia | NexvoApp',
+    description:
+      'Desarrollo web, apps móviles, software a medida y eCommerce para empresas en Bolivia y Latinoamérica. Consulta gratuita.',
+    url: 'https://nexvoapp.lat/servicios',
+  },
 }
 
 const services = [

@@ -4,8 +4,17 @@ import { ArrowRight, Smartphone, Zap, Shield, Users, Star, Code2, Layers, Shoppi
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Desarrollo de Aplicaciones Móviles',
-  description: 'Desarrollamos apps iOS y Android nativas e híbridas. React Native, Flutter y Swift/Kotlin. Diseño premium, rendimiento real.',
+  title: 'Desarrollo de Apps Móviles en Bolivia — iOS y Android',
+  description:
+    'Creamos aplicaciones móviles para iOS y Android en Bolivia. Apps nativas (Swift, Kotlin) e híbridas (React Native, Flutter). Diseño premium y rendimiento real.',
+  keywords: ['aplicaciones móviles Bolivia', 'desarrollo apps iOS Android Bolivia', 'app móvil La Paz', 'React Native Bolivia', 'Flutter Bolivia', 'empresa apps móviles Bolivia'],
+  alternates: { canonical: 'https://nexvoapp.lat/servicios/aplicaciones-moviles' },
+  openGraph: {
+    title: 'Desarrollo de Apps Móviles iOS y Android en Bolivia | NexvoApp',
+    description:
+      'Desarrollamos aplicaciones móviles nativas e híbridas para iOS y Android en Bolivia. React Native, Flutter, Swift y Kotlin.',
+    url: 'https://nexvoapp.lat/servicios/aplicaciones-moviles',
+  },
 }
 
 const offerings = [
@@ -33,9 +42,32 @@ const features = [
 
 const technologies = ['React Native', 'Flutter', 'Swift', 'Kotlin', 'Expo', 'Firebase', 'Redux', 'Zustand', 'Stripe', 'Push Notifications', 'AsyncStorage', 'REST APIs']
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://nexvoapp.lat' },
+        { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://nexvoapp.lat/servicios' },
+        { '@type': 'ListItem', position: 3, name: 'Aplicaciones Móviles', item: 'https://nexvoapp.lat/servicios/aplicaciones-moviles' },
+      ],
+    },
+    {
+      '@type': 'Service',
+      name: 'Desarrollo de Aplicaciones Móviles',
+      description: 'Apps iOS y Android nativas e híbridas. React Native, Flutter, Swift y Kotlin. Diseño premium y rendimiento real.',
+      provider: { '@type': 'Organization', name: 'NexvoApp', url: 'https://nexvoapp.lat' },
+      areaServed: { '@type': 'Country', name: 'Bolivia' },
+      serviceType: 'Desarrollo de Software',
+    },
+  ],
+}
+
 export default function AppsMobilesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <section className="hero-gradient pt-28 pb-16">
         <div className="container">
           <div className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-5">

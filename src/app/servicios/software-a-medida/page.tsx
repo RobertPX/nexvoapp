@@ -4,8 +4,17 @@ import { ArrowRight, Layers, Settings, BarChart3, GitBranch, Lock, RefreshCw, Co
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Software a Medida para Empresas',
-  description: 'Desarrollamos ERPs, CRMs, sistemas de gestión y automatizaciones personalizadas. Software que se adapta exactamente a tus procesos.',
+  title: 'Software a Medida en Bolivia — ERP, CRM y Sistemas Empresariales',
+  description:
+    'Desarrollamos software empresarial a medida en Bolivia: ERPs, CRMs, sistemas de gestión e inventario, automatizaciones y APIs. Soluciones 100% personalizadas.',
+  keywords: ['software a medida Bolivia', 'ERP Bolivia', 'CRM Bolivia', 'sistemas empresariales Bolivia', 'automatización procesos Bolivia', 'software empresarial La Paz'],
+  alternates: { canonical: 'https://nexvoapp.lat/servicios/software-a-medida' },
+  openGraph: {
+    title: 'Software a Medida en Bolivia — ERP, CRM y Sistemas Empresariales | NexvoApp',
+    description:
+      'ERPs, CRMs, sistemas de gestión y automatizaciones personalizadas para empresas en Bolivia. Software que se adapta a tus procesos.',
+    url: 'https://nexvoapp.lat/servicios/software-a-medida',
+  },
 }
 
 const offerings = [
@@ -31,9 +40,32 @@ const technologies = [
   { cat: 'Infraestructura',  items: ['Docker', 'AWS', 'CI/CD', 'Linux', 'Nginx'] },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://nexvoapp.lat' },
+        { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://nexvoapp.lat/servicios' },
+        { '@type': 'ListItem', position: 3, name: 'Software a Medida', item: 'https://nexvoapp.lat/servicios/software-a-medida' },
+      ],
+    },
+    {
+      '@type': 'Service',
+      name: 'Software Empresarial a Medida',
+      description: 'ERPs, CRMs, sistemas de gestión e inventario, automatizaciones y APIs personalizadas para empresas en Bolivia.',
+      provider: { '@type': 'Organization', name: 'NexvoApp', url: 'https://nexvoapp.lat' },
+      areaServed: { '@type': 'Country', name: 'Bolivia' },
+      serviceType: 'Desarrollo de Software',
+    },
+  ],
+}
+
 export default function SoftwareMedidaPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <section className="hero-gradient pt-28 pb-16">
         <div className="container">
           <div className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-5">

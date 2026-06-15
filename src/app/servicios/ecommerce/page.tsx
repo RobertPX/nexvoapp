@@ -4,8 +4,17 @@ import { ArrowRight, ShoppingBag, CreditCard, Package, BarChart3, Search, Shield
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
-  title: 'Desarrollo de eCommerce',
-  description: 'Construimos tiendas online personalizadas, rápidas y seguras. Gestión de inventario, pagos en línea y experiencia de compra optimizada.',
+  title: 'Desarrollo de Tiendas Online y eCommerce en Bolivia',
+  description:
+    'Creamos tiendas online y plataformas eCommerce en Bolivia. Diseño personalizado, pasarelas de pago, gestión de inventario y SEO incluidos. Vende desde el primer día.',
+  keywords: ['ecommerce Bolivia', 'tienda online Bolivia', 'tienda virtual Bolivia', 'desarrollo ecommerce La Paz', 'vender online Bolivia', 'pasarela de pago Bolivia'],
+  alternates: { canonical: 'https://nexvoapp.lat/servicios/ecommerce' },
+  openGraph: {
+    title: 'Desarrollo de Tiendas Online y eCommerce en Bolivia | NexvoApp',
+    description:
+      'Tiendas online personalizadas, rápidas y seguras para Bolivia. Pagos en línea, gestión de inventario y SEO integrado.',
+    url: 'https://nexvoapp.lat/servicios/ecommerce',
+  },
 }
 
 const offerings = [
@@ -39,9 +48,32 @@ const steps = [
   { n: '04', t: 'Lanzamiento y soporte',  d: 'Publicamos la tienda y te capacitamos para gestionar productos, pedidos y clientes.' },
 ]
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://nexvoapp.lat' },
+        { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://nexvoapp.lat/servicios' },
+        { '@type': 'ListItem', position: 3, name: 'eCommerce', item: 'https://nexvoapp.lat/servicios/ecommerce' },
+      ],
+    },
+    {
+      '@type': 'Service',
+      name: 'Desarrollo de eCommerce',
+      description: 'Tiendas online personalizadas, rápidas y seguras con pasarelas de pago, gestión de inventario y SEO integrado para Bolivia.',
+      provider: { '@type': 'Organization', name: 'NexvoApp', url: 'https://nexvoapp.lat' },
+      areaServed: { '@type': 'Country', name: 'Bolivia' },
+      serviceType: 'Desarrollo de Software',
+    },
+  ],
+}
+
 export default function EcommercePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }} />
       <section className="hero-gradient pt-28 pb-16">
         <div className="container">
           <div className="flex items-center gap-2 text-sm text-[var(--text-muted)] mb-5">
