@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: 'https://nexvoapp.lat',
   },
 }
-import { ArrowRight, Code2, Smartphone, Layers, ShoppingBag, CheckCircle2, Users, Briefcase, Star, Zap, Shield, Clock, Globe, BarChart3 } from 'lucide-react'
+import { ArrowRight, Code2, Smartphone, Layers, ShoppingBag, Users, Star, Zap, Shield, Clock, Globe, BarChart3 } from 'lucide-react'
 import CTABanner from '@/components/CTABanner'
 
 /* ── Hero ── */

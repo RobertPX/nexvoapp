@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { MessageCircle, ArrowRight } from 'lucide-react'
 
 interface CTABannerProps {
@@ -36,13 +37,25 @@ export default function CTABanner({
             <MessageCircle size={18} />
             {primaryLabel}
           </a>
-          <a
-            href={secondaryHref}
-            className="btn text-base px-7 py-3.5 bg-white/10 text-white border border-white/20 hover:bg-white/20"
-          >
-            {secondaryLabel}
-            <ArrowRight size={16} />
-          </a>
+          {secondaryHref.startsWith('http') ? (
+            <a
+              href={secondaryHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn text-base px-7 py-3.5 bg-white/10 text-white border border-white/20 hover:bg-white/20"
+            >
+              {secondaryLabel}
+              <ArrowRight size={16} />
+            </a>
+          ) : (
+            <Link
+              href={secondaryHref}
+              className="btn text-base px-7 py-3.5 bg-white/10 text-white border border-white/20 hover:bg-white/20"
+            >
+              {secondaryLabel}
+              <ArrowRight size={16} />
+            </Link>
+          )}
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ArrowRight, Zap, Shield, Users, Star } from 'lucide-react'
+import { Zap, Shield, Users, Star } from 'lucide-react'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {

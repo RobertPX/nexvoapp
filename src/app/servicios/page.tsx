@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { Code2, Smartphone, Layers, ShoppingBag, ArrowRight, CheckCircle2, Zap, Shield, Users, Clock } from 'lucide-react'
+import { Code2, Smartphone, Layers, ShoppingBag, ArrowRight, Zap, Shield, Users, Clock } from 'lucide-react'
 import CTABanner from '@/components/CTABanner'
 
 export const metadata: Metadata = {
